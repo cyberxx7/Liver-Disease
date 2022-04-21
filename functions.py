@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from pandas.plotting import parallel_coordinates
 
 def display_factorial_planes(X_projected, n_comp, pca, axis_ranks, labels=None, alpha=1, illustrative_var=None):
     '''Display a scatter plot on a factorial plane, one for each factorial plane'''
@@ -68,3 +69,8 @@ def display_parallel_coordinates(df, num_clusters):
         ax=plt.gca()
         for tick in ax.xaxis.get_major_ticks()[1::2]:
             tick.set_pad(20)        
+
+def addAlpha(colour, alpha):
+    '''Add an alpha to the RGB colour'''
+    
+    return (colour[0],colour[1],colour[2],alpha)
